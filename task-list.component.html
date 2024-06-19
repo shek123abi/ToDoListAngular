@@ -1,0 +1,5 @@
+<ng-content></ng-content>
+<input *ngIf="role.length" type="text" class="form-control" placeholder="search task" name="textSearch" id="textSearch" [(ngModel)]="searchText"/>
+<ul>
+    <li class="d-flex my-3 py-2 px-3" *ngFor="let task of role | filter: searchText;let i=index">{{task}}<button class="btn btn-outline-danger" (click)="removeTask(i)">delete</button></li>
+  </ul>
